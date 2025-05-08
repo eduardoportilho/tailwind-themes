@@ -1,21 +1,44 @@
 import { useState } from "react";
 import { applyTheme } from "./theme/applyTheme";
-import baseTheme from "./theme/base-theme.json";
+import baseTheme from "./theme/theme-base.json";
+import sassyTheme from "./theme/theme-sassy.json";
 import { Button } from "./components/Button";
+import { Select } from "./components/Select";
 
-const BASE_THEME = JSON.stringify(baseTheme, null, 2);
+const THEMES = {
+  base: JSON.stringify(baseTheme, null, 2),
+  sassy: JSON.stringify(sassyTheme, null, 2),
+};
 
 function App() {
-  const [theme, setTheme] = useState(BASE_THEME);
+  const [theme, setTheme] = useState(THEMES.base);
+
+  const handleThemeSelected: React.ChangeEventHandler<HTMLSelectElement> = (
+    e
+  ) => {
+    const selectedKey = e.target.value as keyof typeof THEMES;
+    const newTheme = THEMES[selectedKey] ?? "";
+    setTheme(newTheme);
+  };
+
+  const handleReset = () => {
+    setTheme(THEMES.base);
+    applyTheme(THEMES.base);
+  };
 
   const handleApply = () => applyTheme(theme);
 
   return (
     <div className="p-10">
-      <div className="flex flex-col gap-2 mb-8">
-        <label className="text-lg" htmlFor="theme">
-          Theme definition:
-        </label>
+      <div className="flex flex-col gap-2 mb-8 w-100 items-start">
+        <Select
+          label="Theme definition:"
+          options={[
+            { label: "Base", value: "base" },
+            { label: "Sassy", value: "sassy" },
+          ]}
+          onChange={handleThemeSelected}
+        />
 
         <textarea
           id="theme"
@@ -28,11 +51,7 @@ function App() {
           <Button color="primary" size="sm" onClick={handleApply}>
             Apply
           </Button>
-          <Button
-            color="secondary"
-            size="sm"
-            onClick={() => setTheme(BASE_THEME)}
-          >
+          <Button color="secondary" size="sm" onClick={handleReset}>
             Reset
           </Button>
         </div>

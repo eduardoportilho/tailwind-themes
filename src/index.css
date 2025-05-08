@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
---theme-color-primary: cornflowerblue;
---theme-color-secondary: aquamarine;
+--theme-color-primary: darkblue;
+--theme-color-secondary: dodgerblue;
 }
 
 @theme inline {
