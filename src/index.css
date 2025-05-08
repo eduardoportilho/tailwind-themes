@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+--theme-color-primary: cornflowerblue;
+--theme-color-secondary: aquamarine;
+}
+
+@theme inline {
+  --color-primary: var(--theme-color-primary);
+  --color-secondary: var(--theme-color-secondary);
+}
