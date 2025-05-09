@@ -1,4 +1,6 @@
 {
+  "theme-color-accent": "lightblue",
   "theme-color-primary": "darkblue",
-  "theme-color-secondary": "dodgerblue"
+  "theme-color-secondary": "dodgerblue",
+  "theme-color-vivid": "var(--theme-color-accent)"
 }

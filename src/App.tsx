@@ -43,7 +43,7 @@ function App() {
         <textarea
           id="theme"
           value={theme}
-          rows={4}
+          rows={8}
           className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
           onChange={(e) => setTheme(e.target.value)}
         />
@@ -56,7 +56,7 @@ function App() {
           </Button>
         </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 bg-special w-100 p-8 justify-center">
         <Button color="primary" size="lg">
           Primary
         </Button>
