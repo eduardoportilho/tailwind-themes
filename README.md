@@ -5,7 +5,7 @@
 - Select one of the existing themes, click on the Apply button
 - Edit the theme on the text area, click on the Apply button
 
-<img width="457" alt="image" src="https://github.com/user-attachments/assets/4b06a90e-8180-4758-8e34-7bdaa0e1dac6" />
+<img width="621" alt="image" src="https://github.com/user-attachments/assets/524f5914-5b62-4f15-a30f-f0b7b289670a" />
 
 
 ## Theme definition:
