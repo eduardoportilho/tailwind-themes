@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
---theme-color-accent: lightblue;
---theme-color-primary: darkblue;
---theme-color-secondary: dodgerblue;
---theme-color-vivid: var(--theme-color-accent);
+  --unrelated-var: 42;
+  --theme-color-accent: lightblue;
+  --theme-color-primary: darkblue;
+  --theme-color-secondary: dodgerblue;
+  --theme-color-vivid: var(--theme-color-accent);
 }
 
 @theme inline {

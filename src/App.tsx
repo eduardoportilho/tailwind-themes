@@ -4,6 +4,7 @@ import baseTheme from "./theme/theme-base.json";
 import sassyTheme from "./theme/theme-sassy.json";
 import { Button } from "./components/Button";
 import { Select } from "./components/Select";
+import { getTheme } from "./theme/getTheme";
 
 const THEMES = {
   base: JSON.stringify(baseTheme, null, 2),
@@ -28,9 +29,16 @@ function App() {
 
   const handleApply = () => applyTheme(theme);
 
+  const handleReadTheme = () => {
+    const currentThemeObj = getTheme();
+    const currentTheme = JSON.stringify(currentThemeObj, null, 2);
+    setTheme(currentTheme);
+    console.log(`> Current theme:`, currentTheme);
+  };
+
   return (
     <div className="p-10">
-      <div className="flex flex-col gap-2 mb-8 w-100 items-start">
+      <div className="flex flex-col gap-2 mb-8 w-150 items-start">
         <Select
           label="Theme definition:"
           options={[
@@ -53,6 +61,9 @@ function App() {
           </Button>
           <Button color="secondary" size="sm" onClick={handleReset}>
             Reset
+          </Button>
+          <Button color="secondary" size="sm" onClick={handleReadTheme}>
+            Read current theme
           </Button>
         </div>
       </div>
